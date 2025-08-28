@@ -1,5 +1,5 @@
-# api.ctechsolutions.co -> reverse proxy a suplemedicos.com.co por **IPv4**
-api.ctechsolutions.co {
+# api.example.com -> reverse proxy a suplemedicos.com.co por **IPv4**
+api.example.com {
   encode zstd gzip
 
   reverse_proxy https://45.152.46.144 {

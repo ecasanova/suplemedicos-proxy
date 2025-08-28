@@ -3,7 +3,10 @@
 
 Este repositorio contiene un pequeño [Caddy](https://caddyserver.com) reverse proxy
 que reenvía solicitudes a `suplemedicos.com.co`. La configuración se gestiona con
-Docker Compose y está pensada para ser fácil de desplegar en cualquier servidor.
+Docker Compose y está pensada para ser fácil de desplegar en cualquier servidor.
+
+> ⚠️ **IMPORTANTE**: Tu servidor debe tener configurado tanto **IPv4** como **IPv6** para que el proxy funcione correctamente. Verifica que tu proveedor de hosting soporte ambos protocolos antes de continuar.
+
 
 ## Requisitos
 

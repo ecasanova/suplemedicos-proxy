@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  caddy:
+    image: caddy:2.8
+    container_name: caddy-reverse-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"     # HTTP (IPv4 e IPv6)
+      - "443:443"   # HTTPS (IPv4 e IPv6)
+    environment:
+      - ACME_AGREE=true
+      - EMAIL=${ACME_EMAIL:-}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

@@ -51,7 +51,7 @@ En el proveedor de DNS de tu dominio:
 
 - Crea un registro **A** que apunte `api.example.com` a la dirección IPv4 de tu
   servidor.
-- (Opcional) Crea un registro **AAAA** para IPv6.
+- Crea un registro **AAAA** para IPv6.
 
 Asegúrate de que los puertos 80 y 443 estén abiertos en tu firewall.
 

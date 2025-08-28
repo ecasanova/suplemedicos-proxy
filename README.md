@@ -25,7 +25,6 @@ sudo systemctl enable --now docker
 
 ### Configuración
 
-
 1. Ajusta el dominio en el `Caddyfile`. Por ejemplo:
 
 > Nota: El archivo `Caddyfile` está configurado por defecto para apuntar a la IP `45.152.46.144` como destino del proxy.
@@ -39,8 +38,14 @@ sudo systemctl enable --now docker
 
    Sustituye `api.example.com` por tu propio dominio.
 
-2. Opcionalmente define la variable de entorno `ACME_EMAIL` con el correo que
-   usarás para el certificado TLS emitido por Let's Encrypt.
+2. Configura tu email para los certificados Let's Encrypt:
+
+   ```bash
+   # Edita el archivo .env con tu email
+   nano .env
+   ```
+
+   Cambia `admin@ejemplo.com` por tu email real en el archivo `.env`.
 
 ### Iniciar el proxy
 

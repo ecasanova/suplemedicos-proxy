@@ -1,13 +1,15 @@
+
 # Suplemedicos Proxy
 
-This repository contains a small [Caddy](https://caddyserver.com) reverse proxy
-that forwards requests to `suplemedicos.com.co`. The setup is managed with
-Docker Compose and is intended to be easy to deploy on any server.
+Este repositorio contiene un pequeño [Caddy](https://caddyserver.com) reverse proxy
+que reenvía solicitudes a `suplemedicos.com.co`. La configuración se gestiona con
+Docker Compose y está pensada para ser fácil de desplegar en cualquier servidor.
 
 ## Requisitos
 
 - Docker
 - Docker Compose (plugin incluido en versiones recientes de Docker)
+
 
 ### Instalar Docker
 
@@ -16,6 +18,7 @@ sudo apt-get update
 sudo apt-get install -y docker.io docker-compose-plugin
 sudo systemctl enable --now docker
 ```
+
 
 ### Configuración
 
@@ -48,6 +51,27 @@ En el proveedor de DNS de tu dominio:
 - (Opcional) Crea un registro **AAAA** para IPv6.
 
 Asegúrate de que los puertos 80 y 443 estén abiertos en tu firewall.
+
+
+## Probar que el proxy funciona
+
+Puedes verificar que el proxy está funcionando correctamente utilizando `curl` desde cualquier máquina con acceso a internet. Por ejemplo:
+
+### Probar con IPv4
+
+
+```bash
+curl -4 -I https://api.example.com
+```
+
+### Probar con IPv6
+
+
+```bash
+curl -6 -I https://api.example.com
+```
+
+Si el proxy está funcionando, deberías recibir una respuesta con encabezados HTTP, incluyendo un código de estado 200, 301, 302, etc.
 
 ## Detener el servicio
 

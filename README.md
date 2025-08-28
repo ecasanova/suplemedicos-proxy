@@ -22,7 +22,10 @@ sudo systemctl enable --now docker
 
 ### Configuración
 
+
 1. Ajusta el dominio en el `Caddyfile`. Por ejemplo:
+
+> Nota: El archivo `Caddyfile` está configurado por defecto para apuntar a la IP `45.152.46.144` como destino del proxy.
 
    ```caddy
    # api.example.com -> reverse proxy a suplemedicos.com.co por **IPv4**
